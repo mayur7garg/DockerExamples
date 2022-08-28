@@ -1,0 +1,19 @@
+version: "3.9"
+name: "Docker Example - Production"
+services:
+  service1:
+    build: ./service1
+    image: service1_img:latest
+    ports:
+      - "8000:5000"
+    environment:
+      - FLASK_ENV=production
+    container_name: service1_prod
+  service2:
+    build: ./service2
+    image: service2_img:latest
+    ports:
+      - "8001:5000"
+    environment:
+      - FLASK_ENV=production
+    container_name: service2_prod

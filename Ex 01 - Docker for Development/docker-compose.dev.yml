@@ -1,0 +1,23 @@
+version: "3.9"
+name: "Docker Example - Development"
+services:
+  service1:
+    build: ./service1
+    image: service1_img:latest
+    ports:
+      - "8000:5000"
+    volumes:
+      - .:/code
+    environment:
+      - FLASK_ENV=development
+    container_name: service1_dev
+  service2:
+    build: ./service2
+    image: service2_img:latest
+    ports:
+      - "8001:5000"
+    volumes:
+      - .:/code
+    environment:
+      - FLASK_ENV=development
+    container_name: service2_dev
