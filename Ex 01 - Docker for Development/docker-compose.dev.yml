@@ -10,6 +10,8 @@ services:
       - .:/code
     environment:
       - FLASK_ENV=development
+    command: /bin/bash
+    tty: true
     container_name: service1_dev
   service2:
     build: ./service2
@@ -20,4 +22,6 @@ services:
       - .:/code
     environment:
       - FLASK_ENV=development
+    command: /bin/bash
+    tty: true
     container_name: service2_dev
